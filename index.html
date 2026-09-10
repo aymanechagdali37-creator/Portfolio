@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aymane Chagdali — Web Developer Portfolio">
+  <title>Aymane Chagdali | Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor-glow"></div>
+
+  <header class="site-header" id="header">
+    <a class="logo" href="#home">A<span>.</span></a>
+
+    <nav class="nav" id="nav">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عني</a>
+      <a href="#skills">المهارات</a>
+      <a href="#projects">المشاريع</a>
+      <a href="#contact">تواصل معي</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero section" id="home">
+      <div class="hero-bg"></div>
+
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span></span> متاح للتعلم وبناء مشاريع جديدة</div>
+        <h1>مرحباً، أنا <strong>Aymane</strong><br><span>Web Developer</span></h1>
+        <p>
+          أتعلم تطوير المواقع وأحوّل الأفكار إلى مواقع ويب عصرية،
+          سريعة ومتجاوبة، وأطوّر مهاراتي من خلال بناء مشاريع عملية.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">شاهد مشاريعي <span>↙</span></a>
+          <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+        </div>
+
+        <div class="hero-tech">
+          <span>HTML5</span>
+          <i>•</i>
+          <span>CSS3</span>
+          <i>•</i>
+          <span>JavaScript</span>
+        </div>
+      </div>
+
+      <div class="code-card reveal">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <b>portfolio.js</b>
+        </div>
+        <pre><code><span class="purple">const</span> developer = {
+  <span class="key">name</span>: <span class="green">"Aymane"</span>,
+  <span class="key">country</span>: <span class="green">"Morocco 🇲🇦"</span>,
+  <span class="key">role</span>: <span class="green">"Web Developer"</span>,
+  <span class="key">learning</span>: [
+    <span class="green">"HTML"</span>,
+    <span class="green">"CSS"</span>,
+    <span class="green">"JavaScript"</span>
+  ],
+  <span class="key">goal</span>: <span class="green">"Build &amp; Learn"</span>
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+        <h2>من أنا؟</h2>
+        <p>نبذة قصيرة عني وعن رحلتي في تطوير الويب.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="big-text">
+            أنا <strong>Aymane Chagdali</strong>، مطور مواقع ويب من المغرب.
+          </p>
+          <p>
+            أتعلم حالياً تطوير الواجهات الأمامية باستخدام HTML وCSS وJavaScript،
+            وأركز على بناء مشاريع عملية تساعدني على تطوير مهاراتي خطوة بخطوة.
+          </p>
+          <p>
+            أحب التعلم، تجربة أفكار جديدة، وتحويل التصاميم والأفكار إلى صفحات
+            ويب واضحة، جميلة ومتجاوبة مع مختلف الشاشات.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat"><strong>22</strong><span>سنة</span></div>
+          <div class="stat"><strong>03</strong><span>تقنيات أتعلمها</span></div>
+          <div class="stat"><strong>02</strong><span>مشاريع تجريبية</span></div>
+          <div class="stat"><strong>∞</strong><span>رغبة في التعلم</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills-section" id="skills">
+      <div class="section-heading reveal">
+        <span class="section-number">02</span>
+        <h2>المهارات</h2>
+        <p>التقنيات التي أتعلمها وأستخدمها في مشاريعي الحالية.</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-icon">01</div>
+          <h3>HTML5</h3>
+          <p>بناء هيكلة صفحات الويب بطريقة منظمة وسهلة القراءة.</p>
+          <div class="skill-line"><span style="width: 85%"></span></div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon">02</div>
+          <h3>CSS3</h3>
+          <p>تصميم الواجهات، Responsive Design، Animations وHover Effects.</p>
+          <div class="skill-line"><span style="width: 80%"></span></div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-icon">03</div>
+          <h3>JavaScript</h3>
+          <p>أتعلم الأساسيات والتفاعل مع عناصر الصفحة والأحداث.</p>
+          <div class="skill-line"><span style="width: 55%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section projects" id="projects">
+      <div class="section-heading reveal">
+        <span class="section-number">03</span>
+        <h2>مشاريعي</h2>
+        <p>مشاريع تجريبية بنيتها لتطوير مهاراتي في Front-End.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-preview pizza-preview">
+            <div class="preview-overlay">
+              <span class="preview-icon">🍕</span>
+              <span>Pizza House</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-type">تجريبي • 01</span>
+              <span>↗</span>
+            </div>
+            <h3>Pizza House</h3>
+            <p>موقع عصري لمطعم بيتزا مع قائمة الطعام، معرض الصور، آراء الزبناء ونموذج الطلب.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project ↗</a>
+              <a href="#" class="github-link">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-preview gym-preview">
+            <div class="preview-overlay">
+              <span class="preview-icon">💪</span>
+              <span>IRON GYM</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-type">تجريبي • 02</span>
+              <span>↗</span>
+            </div>
+            <h3>IRON GYM</h3>
+            <p>موقع لصالة رياضية مع الخدمات، خطط الاشتراك، المدربين، معرض الصور والتواصل.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project ↗</a>
+              <a href="#" class="github-link">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="temporary-note reveal">
+        <span>✦</span>
+        هذان المشروعان تجريبيان مؤقتان ويمكن استبدالهما لاحقاً بمشاريع جديدة.
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section why-section">
+      <div class="section-heading reveal">
+        <span class="section-number">04</span>
+        <h2>أطور نفسي باستمرار</h2>
+        <p>الهدف ليس أن أعرف كل شيء الآن، بل أن أتعلم وأتحسن مع كل مشروع.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item reveal"><span>↗</span><h3>تعلم مستمر</h3><p>أتعلم مفاهيم جديدة وأطبقها عملياً.</p></div>
+        <div class="why-item reveal"><span>◈</span><h3>مشاريع عملية</h3><p>أحول ما أتعلمه إلى مواقع حقيقية قابلة للعرض.</p></div>
+        <div class="why-item reveal"><span>✦</span><h3>اهتمام بالتفاصيل</h3><p>أهتم بالتصميم، التنظيم وتجربة المستخدم.</p></div>
+        <div class="why-item reveal"><span>⌁</span><h3>خطوة بخطوة</h3><p>أبني أساساً قوياً وأتقدم بدون استعجال.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="contact-box reveal">
+        <div class="contact-copy">
+          <span class="section-number">05</span>
+          <h2>عندك فكرة؟<br><span>خلينا نهضرو.</span></h2>
+          <p>إذا عندك فكرة لموقع ويب، يمكنك التواصل معي ومناقشة الفكرة.</p>
+          <div class="contact-socials">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>الاسم
+            <input type="text" name="name" placeholder="اكتب اسمك" required>
+          </label>
+          <label>البريد الإلكتروني
+            <input type="email" name="email" placeholder="example@email.com" required>
+          </label>
+          <label>الرسالة
+            <textarea name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">إرسال الرسالة <span>↗</span></button>
+          <p class="form-message" id="formMessage"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a class="logo" href="#home">A<span>.</span></a>
+        <p>Web Developer • Morocco 🇲🇦</p>
+      </div>
+      <p class="copyright">© 2026 Aymane Chagdali. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
