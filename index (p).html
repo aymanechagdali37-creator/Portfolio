@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aymane | Front-End Web Developer</title>
+
+  <meta name="description" content="Aymane - Front-End Web Developer. تصميم وتطوير مواقع ويب عصرية ومتجاوبة.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Tajawal", sans-serif;
+      background: #0b0f19;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #00d4ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #d5d9e2;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 75px;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero-small {
+      color: #00d4ff;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 80px);
+      line-height: 1.1;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #00d4ff;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      color: #dce1eb;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #aeb5c4;
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: #00d4ff;
+      color: #061018;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      border: 1px solid #303847;
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      border-color: #00d4ff;
+      color: #00d4ff;
+      transform: translateY(-3px);
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: #00d4ff;
+    }
+
+    .section-title p {
+      color: #929aaa;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #aeb5c4;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .about-box {
+      padding: 35px;
+      border-radius: 15px;
+      background: #111827;
+      border: 1px solid #202a3a;
+    }
+
+    .about-box h3 {
+      color: #00d4ff;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: #aeb5c4;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #111827;
+      border: 1px solid #202a3a;
+      border-radius: 15px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #00d4ff;
+    }
+
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #929aaa;
+      font-size: 14px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #111827;
+      border: 1px solid #202a3a;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #00d4ff;
+    }
+
+    .project-image {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #172033, #0e1420);
+      font-size: 45px;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: #9ca5b5;
+      margin-bottom: 15px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background: rgba(0, 212, 255, 0.1);
+      color: #00d4ff;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #111827;
+      border: 1px solid #202a3a;
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    .service-card h3 {
+      margin: 15px 0 10px;
+    }
+
+    .service-card p {
+      color: #929aaa;
+      font-size: 14px;
+    }
+
+    .service-icon {
+      font-size: 35px;
+    }
+
+    /* ================= PROCESS ================= */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      text-align: center;
+      background: #111827;
+      border: 1px solid #202a3a;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .process-number {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #00d4ff;
+      color: #061018;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-weight: 800;
+    }
+
+    .process-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: #929aaa;
+      font-size: 14px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      background: #111827;
+      border: 1px solid #202a3a;
+      border-radius: 18px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box > p {
+      color: #929aaa;
+      margin-bottom: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      min-width: 180px;
+      padding: 16px 22px;
+      border-radius: 10px;
+      background: #0b0f19;
+      border: 1px solid #303847;
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      border-color: #00d4ff;
+      color: #00d4ff;
+      transform: translateY(-3px);
+    }
+
+    .contact-link strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 3px;
+    }
+
+    .contact-link small {
+      color: #929aaa;
+      font-size: 12px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      border-top: 1px solid #202a3a;
+      padding: 40px 0;
+      text-align: center;
+      background: #080c14;
+    }
+
+    .footer-logo {
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .footer-logo span {
+      color: #00d4ff;
+    }
+
+    footer > .container > p {
+      color: #929aaa;
+      margin-bottom: 20px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .socials a {
+      padding: 10px 18px;
+      border: 1px solid #303847;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00d4ff;
+      border-color: #00d4ff;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #6f7787 !important;
+    }
+
+    /* ================= BACK TO TOP ================= */
+
+    #topBtn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: #00d4ff;
+      color: #061018;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        background: #0b0f19;
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid #202a3a;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .skills-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .contact-link {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="#home" class="logo">
+          Aymane<span>.</span>
+        </a>
+
+        <div class="menu-btn" id="menuBtn">
+          ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+
+          <li>
+            <a href="#home">الرئيسية</a>
+          </li>
+
+          <li>
+            <a href="#about">عني</a>
+          </li>
+
+          <li>
+            <a href="#skills">المهارات</a>
+          </li>
+
+          <li>
+            <a href="#projects">المشاريع</a>
+          </li>
+
+          <li>
+            <a href="#services">الخدمات</a>
+          </li>
+
+          <li>
+            <a href="#contact">تواصل معي</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-small">
+            مرحباً، أنا
+          </div>
+
+          <h1>
+            Aymane<span>.</span>
+          </h1>
+
+          <h2>
+            Front-End Web Developer
+          </h2>
+
+          <p>
+            كنصمم ونطور مواقع ويب عصرية، سريعة ومتجاوبة
+            مع الهاتف والحاسوب، مع التركيز على التصميم
+            البسيط وتجربة المستخدم.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+              شوف المشاريع
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              تواصل معي
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>عني</span>
+          </h2>
+
+          <p>
+            تعرف علي أكثر
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-text reveal">
+
+            <h3>
+              كنحب نبني مواقع ويب بسيطة ومميزة
+            </h3>
+
+            <p>
+              أنا Aymane، مطور مواقع ويب مهتم بتطوير
+              واجهات المستخدم باستعمال HTML و CSS و JavaScript.
+            </p>
+
+            <p>
+              كنركز على إنشاء مواقع تكون منظمة، سريعة،
+              سهلة الاستعمال ومتوافقة مع مختلف أحجام الشاشات.
+            </p>
+
+            <p>
+              هدفي هو تطوير مهاراتي باستمرار وإنشاء مشاريع
+              حقيقية تساعدني نبني Portfolio قوي.
+            </p>
+
+          </div>
+
+
+          <div class="about-box reveal">
+
+            <h3>
+              هدفي
+            </h3>
+
+            <p>
+              نطور راسي فمجال Front-End Web Development
+              ونبني مواقع احترافية ونحول هاد المهارة
+              لمجال مهني في المستقبل.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>المهارات</span>
+          </h2>
+
+          <p>
+            التقنيات والمجالات اللي كنخدم بها
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              🌐
+            </div>
+
+            <h3>
+              HTML
+            </h3>
+
+            <p>
+              بناء هيكلة صفحات الويب بطريقة منظمة وسليمة.
+            </p>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              🎨
+            </div>
+
+            <h3>
+              CSS
+            </h3>
+
+            <p>
+              تصميم وتنسيق صفحات الويب وإنشاء واجهات عصرية.
+            </p>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              ⚡
+            </div>
+
+            <h3>
+              JavaScript
+            </h3>
+
+            <p>
+              إضافة التفاعل والحركة والوظائف للمواقع.
+            </p>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              📱
+            </div>
+
+            <h3>
+              Responsive Design
+            </h3>
+
+            <p>
+              تصميم مواقع متجاوبة مع الهاتف والحاسوب.
+            </p>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              🖥️
+            </div>
+
+            <h3>
+              UI Design
+            </h3>
+
+            <p>
+              الاهتمام بالشكل والتنظيم وتجربة المستخدم.
+            </p>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <div class="skill-icon">
+              🚀
+            </div>
+
+            <h3>
+              Web Projects
+            </h3>
+
+            <p>
+              بناء مشاريع ويب تطبيقية لإظهار المهارات.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>المشاريع</span>
+          </h2>
+
+          <p>
+            بعض المشاريع التجريبية
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PIZZA -->
+
+          <div class="project-card reveal">
+
+            <div class="project-image">
+              🍕
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                Pizza House
+              </h3>
+
+              <p>
+                موقع تجريبي لمطعم بيتزا بتصميم عصري
+                ومتجاوب مع مختلف الأجهزة.
+              </p>
+
+              <span class="project-tag">
+                مشروع تجريبي
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- GYM -->
+
+          <div class="project-card reveal">
+
+            <div class="project-image">
+              🏋️
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                IRON GYM
+              </h3>
+
+              <p>
+                موقع تجريبي لنادي رياضي مع تصميم
+                حديث ومناسب للهاتف والحاسوب.
+              </p>
+
+              <span class="project-tag">
+                مشروع تجريبي
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>الخدمات</span>
+          </h2>
+
+          <p>
+            شنو نقدر نقدم
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              🌐
+            </div>
+
+            <h3>
+              إنشاء المواقع
+            </h3>
+
+            <p>
+              إنشاء مواقع ويب بسيطة وعصرية حسب الحاجة.
+            </p>
+
+          </div>
+
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              📱
+            </div>
+
+            <h3>
+              مواقع متجاوبة
+            </h3>
+
+            <p>
+              تصميم مواقع تعمل بشكل جيد على الهاتف
+              والحاسوب وجميع الشاشات.
+            </p>
+
+          </div>
+
+
+          <div class="service-card reveal">
+
+            <div class="service-icon">
+              🎨
+            </div>
+
+            <h3>
+              تصميم الواجهات
+            </h3>
+
+            <p>
+              إنشاء واجهات مرتبة، واضحة وسهلة الاستعمال.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PROCESS ================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>طريقة العمل</span>
+          </h2>
+
+          <p>
+            كيفاش كنخدم على المشاريع
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              1
+            </div>
+
+            <h3>
+              الفكرة
+            </h3>
+
+            <p>
+              نفهم شنو بغيتي فالموقع.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              2
+            </div>
+
+            <h3>
+              التصميم
+            </h3>
+
+            <p>
+              نوجد الشكل والتنظيم ديال الموقع.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              3
+            </div>
+
+            <h3>
+              التطوير
+            </h3>
+
+            <p>
+              نحول التصميم لموقع حقيقي باستعمال الكود.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              4
+            </div>
+
+            <h3>
+              التسليم
+            </h3>
+
+            <p>
+              نراجع الموقع ونتأكد أنه خدام مزيان.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <h2>
+            <span>تواصل معي</span>
+          </h2>
+
+          <p>
+            يمكنكم التواصل معي عبر
+          </p>
+
+        </div>
+
+
+        <div class="contact-box reveal">
+
+          <h3>
+            خلينا نتواصل
+          </h3>
+
+          <p>
+            إذا بغيتي تتواصل معي، تقدر تستعمل Instagram
+            أو البريد الإلكتروني.
+          </p>
+
+
+          <div class="contact-links">
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+              class="contact-link"
+              href="https://instagram.com/aymane.codes_"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <strong>
+                Instagram
+              </strong>
+
+              <small>
+                @aymane.codes_
+              </small>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+              class="contact-link"
+              href="mailto:aymanechagdali37@gmail.com"
+            >
+
+              <strong>
+                Email
+              </strong>
+
+              <small>
+                aymanechagdali37@gmail.com
+              </small>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-logo">
+        Aymane<span>.</span>
+      </div>
+
+      <p>
+        Front-End Web Developer
+      </p>
+
+
+      <!-- غير Instagram و Email -->
+
+      <div class="socials">
+
+        <a
+          href="https://instagram.com/aymane.codes_"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a href="mailto:aymanechagdali37@gmail.com">
+          Email
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+        © <span id="year"></span> Aymane.
+        جميع الحقوق محفوظة.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= TOP BUTTON ================= -->
+
+  <button id="topBtn">
+    ↑
+  </button>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+    });
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        navLinks.classList.remove("active");
+
+      });
+
+    });
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+
+      revealElements.forEach(function(element) {
+
+        const windowHeight = window.innerHeight;
+
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+
+          element.classList.add("active");
+
+        }
+
+      });
+
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    revealOnScroll();
+
+
+    /* BACK TO TOP */
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function() {
+
+      if (window.scrollY > 500) {
+
+        topBtn.style.display = "block";
+
+      } else {
+
+        topBtn.style.display = "none";
+
+      }
+
+    });
+
+
+    topBtn.addEventListener("click", function() {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* YEAR */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
