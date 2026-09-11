@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مخبزة وحلويات النخبة | طعم تقليدي بلمسة عصرية</title>
+<meta name="description" content="مخبزة وحلويات النخبة – أشهى المخبوزات والحلويات الطازجة كل يوم. طلبات خاصة لأعياد الميلاد والأعراس والمناسبات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3E6;
+    --cream-deep:#F1E4CC;
+    --espresso:#38220F;
+    --espresso-soft:#5A4028;
+    --saffron:#CC9A3A;
+    --saffron-light:#E4BE6D;
+    --terracotta:#B34A2E;
+    --terracotta-deep:#8F3820;
+    --zellige:#1F6E63;
+    --card:#FFFCF6;
+    --line:rgba(56,34,15,0.12);
+    --shadow:0 18px 40px -22px rgba(56,34,15,0.35);
+    --radius-arch:50% 50% 0 0 / 100% 100% 0 0;
+    --max:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--espresso);
+    font-family:'Tajawal',sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  h1,h2,h3,h4{font-family:'Reem Kufi',sans-serif;font-weight:700;line-height:1.3;color:var(--espresso);}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  section{padding:110px 0;position:relative;}
+
+  ::selection{background:var(--saffron-light);color:var(--espresso);}
+  :focus-visible{outline:3px solid var(--zellige);outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* ---------- Decorative arch shape, reused as a recurring Moroccan motif ---------- */
+  .arch{border-radius:var(--radius-arch);position:relative;overflow:hidden;}
+
+  /* ---------- Section heading pattern ---------- */
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head.center{margin-inline:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:14px;}
+  .section-head p{color:var(--espresso-soft);font-size:17px;max-width:52ch;}
+  .section-head.center p{margin-inline:auto;}
+
+  /* ================= NAVBAR ================= */
+  header{
+    position:fixed;inset-inline:0;top:0;z-index:1000;padding:20px 0;
+    transition:padding .35s ease, background-color .35s ease, box-shadow .35s ease;
+  }
+  header.solid{
+    padding:12px 0;background:rgba(250,243,230,0.94);backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px -20px rgba(56,34,15,0.4);
+  }
+  header .container{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:46px;height:46px;border-radius:var(--radius-arch);
+    background:linear-gradient(160deg,var(--saffron),var(--terracotta));
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-family:'Reem Kufi',sans-serif;font-size:20px;flex-shrink:0;
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.25;}
+  .brand-text strong{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--espresso);}
+  .brand-text span{font-size:12px;color:var(--terracotta-deep);}
+
+  nav.primary-nav{display:flex;align-items:center;gap:34px;}
+  nav.primary-nav a{
+    font-size:15px;font-weight:500;color:var(--espresso-soft);position:relative;
+    padding:6px 2px;transition:color .25s ease;
+  }
+  nav.primary-nav a::after{
+    content:"";position:absolute;right:0;left:0;bottom:0;height:2px;background:var(--terracotta);
+    transform:scaleX(0);transform-origin:center;transition:transform .3s ease;
+  }
+  nav.primary-nav a:hover,nav.primary-nav a.active{color:var(--espresso);}
+  nav.primary-nav a:hover::after,nav.primary-nav a.active::after{transform:scaleX(1);}
+
+  .nav-actions{display:flex;align-items:center;gap:14px;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 28px;border-radius:999px;font-size:15px;font-weight:700;
+    transition:transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 14px 26px -14px rgba(179,74,46,0.75);}
+  .btn-primary:hover{background:var(--terracotta-deep);transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--espresso);border:1.5px solid var(--line);}
+  .btn-outline:hover{border-color:var(--espresso);transform:translateY(-2px);}
+  .btn-ghost-light{background:rgba(255,255,255,0.12);color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,0.22);transform:translateY(-2px);}
+  .btn-small{padding:10px 20px;font-size:14px;}
+
+  .burger{display:none;width:42px;height:42px;border-radius:50%;align-items:center;justify-content:center;background:var(--cream-deep);}
+  .burger span,.burger span::before,.burger span::after{
+    content:"";display:block;width:18px;height:2px;background:var(--espresso);position:relative;
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  .burger span::before{position:absolute;top:-6px;}
+  .burger span::after{position:absolute;top:6px;}
+  .burger.open span{background:transparent;}
+  .burger.open span::before{transform:translateY(6px) rotate(45deg);}
+  .burger.open span::after{transform:translateY(-6px) rotate(-45deg);}
+
+  .mobile-panel{
+    position:fixed;inset:0;top:0;background:var(--cream);z-index:999;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+    transform:translateY(-100%);transition:transform .4s cubic-bezier(.65,0,.35,1);
+  }
+  .mobile-panel.open{transform:translateY(0);}
+  .mobile-panel a{font-family:'Reem Kufi',sans-serif;font-size:22px;color:var(--espresso);}
+
+  /* ================= HERO ================= */
+  .hero{
+    padding-top:170px;padding-bottom:100px;
+    background:radial-gradient(700px 420px at 85% -10%, rgba(204,154,58,0.18), transparent 60%), var(--cream);
+    overflow:hidden;
+  }
+  .hero .container{display:grid;grid-template-columns:1.05fr 0.95fr;gap:60px;align-items:center;}
+  .hero-copy .kicker{
+    font-family:'Reem Kufi',sans-serif;color:var(--terracotta);font-size:16px;margin-bottom:18px;
+    opacity:0;animation:riseIn .7s ease .1s forwards;
+  }
+  .hero-copy h1{
+    font-size:clamp(34px,4.6vw,58px);letter-spacing:0.2px;margin-bottom:22px;
+    opacity:0;animation:riseIn .8s ease .25s forwards;
+  }
+  .hero-copy p{
+    font-size:18px;color:var(--espresso-soft);max-width:46ch;margin-bottom:34px;
+    opacity:0;animation:riseIn .8s ease .4s forwards;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;opacity:0;animation:riseIn .8s ease .55s forwards;}
+  @keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+  .hero-visual{position:relative;opacity:0;animation:riseIn 1s ease .35s forwards;}
+  .hero-arch{
+    width:100%;aspect-ratio:4/5;border-radius:var(--radius-arch);
+    background:linear-gradient(160deg,var(--saffron) 0%, var(--terracotta) 55%, var(--terracotta-deep) 100%);
+    position:relative;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);
+  }
+  .hero-arch::before{
+    content:"";position:absolute;inset:16px;border-radius:var(--radius-arch);border:2px solid rgba(255,255,255,0.4);
+  }
+  .hero-arch .glyph{font-size:120px;filter:drop-shadow(0 14px 18px rgba(0,0,0,0.25));}
+  .hero-chip{
+    position:absolute;bottom:-22px;inset-inline-start:-22px;background:var(--card);border-radius:20px;
+    padding:16px 20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;max-width:230px;
+  }
+  .hero-chip .dot{
+    width:44px;height:44px;border-radius:50%;background:var(--zellige);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
+  }
+  .hero-chip strong{display:block;font-size:14px;font-family:'Reem Kufi',sans-serif;}
+  .hero-chip span{font-size:12.5px;color:var(--espresso-soft);}
+
+  /* ================= PRODUCTS ================= */
+  .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .product-card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 22px 26px;
+    text-align:center;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .product-icon{
+    width:78px;height:78px;margin:0 auto 18px;border-radius:var(--radius-arch);
+    background:var(--cream-deep);display:flex;align-items:center;justify-content:center;font-size:36px;
+  }
+  .product-card h3{font-size:17px;margin-bottom:6px;}
+  .product-card p{font-size:13.5px;color:var(--espresso-soft);}
+
+  /* ================= SPECIAL ORDERS ================= */
+  .special{background:linear-gradient(165deg,var(--zellige) 0%, #16554D 100%);color:#fff;position:relative;}
+  .special::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 26px);
+    pointer-events:none;
+  }
+  .special .container{position:relative;}
+  .special .section-head h2,.special .section-head p{color:#fff;}
+  .special .section-head p{color:rgba(255,255,255,0.8);}
+  .occasions{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px;}
+  .occasion-card{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:20px;
+    padding:34px 26px;backdrop-filter:blur(4px);
+  }
+  .occasion-card .glyph{font-size:34px;margin-bottom:16px;display:block;}
+  .occasion-card h3{color:#fff;font-size:19px;margin-bottom:10px;}
+  .occasion-card p{color:rgba(255,255,255,0.78);font-size:14.5px;}
+  .special-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .special-cta p{color:rgba(255,255,255,0.85);font-size:15px;}
+
+  /* ================= WHY US ================= */
+  .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);}
+  .why-item{padding:34px 18px;border-inline-end:1px solid var(--line);text-align:center;}
+  .why-item:last-child{border-inline-end:none;}
+  .why-glyph{
+    width:56px;height:56px;border-radius:50%;background:var(--cream-deep);color:var(--terracotta);
+    display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 16px;
+  }
+  .why-item h3{font-size:15.5px;margin-bottom:8px;}
+  .why-item p{font-size:13px;color:var(--espresso-soft);}
+
+  /* ================= GALLERY ================= */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:18px;}
+  .gallery-item{
+    border-radius:22px;position:relative;display:flex;align-items:flex-end;padding:16px;
+    overflow:hidden;color:#fff;
+  }
+  .gallery-item span.label{position:relative;font-family:'Reem Kufi',sans-serif;font-size:14.5px;z-index:2;}
+  .gallery-item .glyph{position:absolute;font-size:64px;left:14px;top:10px;opacity:0.5;z-index:1;}
+  .gallery-item::after{
+    content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0));z-index:1;
+  }
+  .g-tall{grid-row:span 2;}
+  .g-wide{grid-column:span 2;}
+
+  /* ================= TESTIMONIALS ================= */
+  .testimonials{background:var(--cream-deep);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .testi-card{background:var(--card);border-radius:20px;padding:32px 28px;box-shadow:var(--shadow);}
+  .stars{color:var(--saffron);font-size:15px;margin-bottom:16px;letter-spacing:3px;}
+  .testi-card p.quote{font-size:15.5px;color:var(--espresso-soft);margin-bottom:22px;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,var(--saffron),var(--terracotta));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Reem Kufi',sans-serif;font-size:15px;
+  }
+  .testi-person strong{display:block;font-size:14.5px;}
+  .testi-person span{font-size:12.5px;color:var(--espresso-soft);}
+
+  /* ================= CONTACT ================= */
+  .contact{background:var(--espresso);color:#fff;}
+  .contact .section-head h2{color:#fff;}
+  .contact .section-head p{color:rgba(255,255,255,0.68);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  .contact-list{display:flex;flex-direction:column;gap:22px;}
+  .contact-row{
+    display:flex;align-items:flex-start;gap:16px;padding-bottom:22px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .contact-row:last-child{border-bottom:none;padding-bottom:0;}
+  .contact-glyph{
+    width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.08);
+    display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;
+  }
+  .contact-row strong{display:block;font-size:15px;margin-bottom:4px;}
+  .contact-row span, .contact-row a{font-size:14.5px;color:rgba(255,255,255,0.72);}
+  .contact-row a:hover{color:var(--saffron-light);}
+
+  .contact-panel{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:22px;
+    padding:38px 32px;display:flex;flex-direction:column;justify-content:center;text-align:center;
+  }
+  .contact-panel .glyph{font-size:44px;margin-bottom:18px;}
+  .contact-panel h3{color:#fff;font-size:20px;margin-bottom:10px;}
+  .contact-panel p{color:rgba(255,255,255,0.7);font-size:14.5px;margin-bottom:26px;}
+  .contact-panel .btn{width:100%;}
+  .socials-row{display:flex;justify-content:center;gap:14px;margin-top:22px;}
+  .social-btn{
+    width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.08);
+    display:flex;align-items:center;justify-content:center;font-size:17px;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .social-btn:hover{background:var(--terracotta);transform:translateY(-3px);}
+
+  /* ================= FOOTER ================= */
+  footer{background:#2A1A0D;color:rgba(255,255,255,0.65);padding:44px 0 26px;}
+  .footer-top{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;
+    padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:22px;
+  }
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .footer-links a{font-size:14px;color:rgba(255,255,255,0.65);}
+  .footer-links a:hover{color:var(--saffron-light);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;
+  }
+
+  /* ================= BACK TO TOP ================= */
+  #backTop{
+    position:fixed;bottom:26px;inset-inline-end:26px;width:48px;height:48px;border-radius:50%;
+    background:var(--terracotta);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:18px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(10px);
+    transition:opacity .3s ease, transform .3s ease;z-index:900;
+  }
+  #backTop.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:1080px){
+    .products-grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{grid-template-columns:repeat(3,1fr);}
+    .why-item:nth-child(3){border-inline-end:none;}
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  @media (max-width:920px){
+    nav.primary-nav{display:none;}
+    .burger{display:flex;}
+    .nav-actions .btn-outline{display:none;}
+    .hero .container{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:320px;margin:0 auto 20px;}
+    .hero-copy{text-align:center;}
+    .hero-copy p{margin-inline:auto;}
+    .hero-cta{justify-content:center;}
+    .occasions{grid-template-columns:1fr;}
+    .special-cta{justify-content:center;text-align:center;flex-direction:column;}
+    .contact-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .why-item{border-inline-end:1px solid var(--line);}
+    .why-item:nth-child(2n){border-inline-end:none;}
+  }
+
+  @media (max-width:640px){
+    section{padding:76px 0;}
+    .products-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
+    .g-wide{grid-column:span 2;}
+    .testi-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .footer-top{flex-direction:column;align-items:flex-start;}
+    .hero{padding-top:130px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="container">
+    <a href="#home" class="brand">
+      <span class="brand-mark">ن</span>
+      <span class="brand-text">
+        <strong>مخبزة وحلويات النخبة</strong>
+        <span>طعم تقليدي بلمسة عصرية</span>
+      </span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#products">منتجاتنا</a>
+      <a href="#special-orders">الطلبات الخاصة</a>
+      <a href="#why-us">لماذا نحن</a>
+      <a href="#gallery">المعرض</a>
+      <a href="#testimonials">آراء الزبناء</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-outline btn-small">تواصل معنا</a>
+      <a href="#special-orders" class="btn btn-primary btn-small">اطلب الآن</a>
+      <button class="burger" id="burgerBtn" aria-label="القائمة" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE PANEL ================= -->
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">الرئيسية</a>
+  <a href="#products">منتجاتنا</a>
+  <a href="#special-orders">الطلبات الخاصة</a>
+  <a href="#why-us">لماذا نحن</a>
+  <a href="#gallery">المعرض</a>
+  <a href="#testimonials">آراء الزبناء</a>
+  <a href="#contact">تواصل معنا</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="kicker">مخبزة وحلويات النخبة</div>
+      <h1>أشهى المخبوزات والحلويات الطازجة كل يوم 🥐</h1>
+      <p>نخبز بأيدٍ ماهرة ومكونات مختارة بعناية، لنقدّم لكم كل صباح خبزاً ساخناً وحلويات مغربية وعالمية تجمع بين الأصالة والذوق العصري.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary">تصفح المنتجات</a>
+        <a href="#special-orders" class="btn btn-outline">اطلب الآن</a>
+        <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-arch">
+        <span class="glyph">🥐</span>
+      </div>
+      <div class="hero-chip">
+        <span class="dot">✓</span>
+        <span>
+          <strong>طازجة كل صباح</strong>
+          <span>تحضير يومي بمكونات طبيعية</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products">
+  <div class="container">
+    <div class="section-head center">
+      <h2>منتجاتنا</h2>
+      <p>تشكيلة واسعة من المخبوزات والحلويات المغربية والعالمية، محضّرة طازجة كل يوم.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card"><div class="product-icon">🍞</div><h3>خبز</h3><p>خبز مغربي تقليدي طازج</p></div>
+      <div class="product-card"><div class="product-icon">🥐</div><h3>كرواسون</h3><p>عجين مورّق بزبدة فرنسية</p></div>
+      <div class="product-card"><div class="product-icon">🍫</div><h3>Pain au chocolat</h3><p>كرواسون محشو بالشوكولاطة</p></div>
+      <div class="product-card"><div class="product-icon">🥯</div><h3>بريوش</h3><p>عجين طري وناعم القوام</p></div>
+      <div class="product-card"><div class="product-icon">🌙</div><h3>كعب الغزال</h3><p>حلوى مغربية بعجين اللوز</p></div>
+      <div class="product-card"><div class="product-icon">🍪</div><h3>غريبة</h3><p>حلوى تقليدية هشّة ولذيذة</p></div>
+      <div class="product-card"><div class="product-icon">🥖</div><h3>فقاص</h3><p>بسكويت مغربي بنكهات متعددة</p></div>
+      <div class="product-card"><div class="product-icon">🍯</div><h3>شباكية</h3><p>حلوى العيد المقرمشة بالعسل</p></div>
+      <div class="product-card"><div class="product-icon">🍰</div><h3>Cheesecake</h3><p>تشيز كيك كريمي بنكهات متنوعة</p></div>
+      <div class="product-card"><div class="product-icon">☕</div><h3>Tiramisu</h3><p>حلوى إيطالية بنكهة القهوة</p></div>
+      <div class="product-card"><div class="product-icon">🧁</div><h3>Cupcake</h3><p>كب كيك مزيّن بأشكال متعددة</p></div>
+      <div class="product-card"><div class="product-icon">🥧</div><h3>Tart</h3><p>تارط بالفواكه الطازجة</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPECIAL ORDERS ================= -->
+<section class="special" id="special-orders">
+  <div class="container">
+    <div class="section-head">
+      <h2>طلبات خاصة لمناسباتكم</h2>
+      <p>نحضّر لكم قطعاً وتشكيلات خاصة تليق بمناسباتكم، بتصميم وتذوق يناسب الحدث.</p>
+    </div>
+
+    <div class="occasions">
+      <div class="occasion-card">
+        <span class="glyph">🎂</span>
+        <h3>أعياد الميلاد</h3>
+        <p>كيكات وحلويات مخصّصة حسب الطلب، بألوان وأذواق تختارونها.</p>
+      </div>
+      <div class="occasion-card">
+        <span class="glyph">💍</span>
+        <h3>الأعراس</h3>
+        <p>تشكيلات حلويات راقية وموائد حلوى كاملة للعرس.</p>
+      </div>
+      <div class="occasion-card">
+        <span class="glyph">🎉</span>
+        <h3>المناسبات</h3>
+        <p>طلبات جماعية للاحتفالات واللقاءات العائلية والمهنية.</p>
+      </div>
+    </div>
+
+    <div class="special-cta">
+      <p>لديكم مناسبة قريبة؟ تواصلوا معنا لتحضير طلبكم الخاص.</p>
+      <a href="#contact" class="btn btn-ghost-light">اطلب الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section id="why-us">
+  <div class="container">
+    <div class="section-head center">
+      <h2>لماذا نختارنا؟</h2>
+      <p>خمسة أسباب تجعل من مخبزة النخبة وجهتكم اليومية.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-glyph">🌾</div>
+        <h3>منتجات طازجة</h3>
+        <p>تحضير يومي دون تخزين</p>
+      </div>
+      <div class="why-item">
+        <div class="why-glyph">🧈</div>
+        <h3>مكونات جيدة</h3>
+        <p>اختيار دقيق لأجود المواد</p>
+      </div>
+      <div class="why-item">
+        <div class="why-glyph">👨‍🍳</div>
+        <h3>تحضير احترافي</h3>
+        <p>أيدٍ خبيرة في كل خطوة</p>
+      </div>
+      <div class="why-item">
+        <div class="why-glyph">⭐</div>
+        <h3>جودة مضمونة</h3>
+        <p>معايير ثابتة في كل طلبية</p>
+      </div>
+      <div class="why-item">
+        <div class="why-glyph">🚴</div>
+        <h3>إمكانية التوصيل</h3>
+        <p>نوصل طلبكم أينما كنتم</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head center">
+      <h2>معرض منتجاتنا</h2>
+      <p>لمحة من مخبوزاتنا وحلوياتنا المحضّرة بعناية.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g-tall" style="background:linear-gradient(160deg,#C9932E,#8F5A1E);">
+        <span class="glyph">🥐</span><span class="label">كرواسون</span>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#B34A2E,#7A311D);">
+        <span class="glyph">🍞</span><span class="label">خبز</span>
+      </div>
+      <div class="gallery-item g-wide" style="background:linear-gradient(160deg,#1F6E63,#123F38);">
+        <span class="glyph">🍯</span><span class="label">شباكية</span>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#CC9A3A,#B34A2E);">
+        <span class="glyph">🍪</span><span class="label">غريبة</span>
+      </div>
+      <div class="gallery-item g-wide" style="background:linear-gradient(160deg,#8F3820,#5A2412);">
+        <span class="glyph">🌙</span><span class="label">كعب الغزال</span>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#1F6E63,#0F3C35);">
+        <span class="glyph">🍰</span><span class="label">Cheesecake</span>
+      </div>
+      <div class="gallery-item g-tall" style="background:linear-gradient(160deg,#B34A2E,#CC9A3A);">
+        <span class="glyph">🧁</span><span class="label">Cupcake</span>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#5A4028,#38220F);">
+        <span class="glyph">☕</span><span class="label">Tiramisu</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head center">
+      <h2>آراء زبنائنا</h2>
+      <p>ثقتكم هي أساس عملنا، وهذا ما يقوله بعض زبنائنا.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">الكرواسون عندهم من ألذ ما تذوقت، طازج ومقرمش كل مرة. أصبحت أزور المخبزة كل صباح.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">س</div>
+          <div><strong>سلمى العلوي</strong><span>زبونة دائمة</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">طلبت منهم كيكة عرسي وكانت أجمل مما تخيلت، والطعم كان رائعاً. شكراً على الاحترافية.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">ي</div>
+          <div><strong>يوسف بنعلي</strong><span>طلب مناسبة</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">الشباكية والغريبة عندهم تذكرني بمخبوزات جدتي. جودة ثابتة وخدمة توصيل سريعة.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">أ</div>
+          <div><strong>أمينة الفاسي</strong><span>زبونة دائمة</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>تواصل معنا</h2>
+      <p>يسعدنا استقبال طلباتكم واستفساراتكم عبر أي من الوسائل التالية.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-list">
+        <div class="contact-row">
+          <span class="contact-glyph">📞</span>
+          <div>
+            <strong>الهاتف</strong>
+            <a href="tel:+212600000000">0600 000 000+</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-glyph">💬</span>
+          <div>
+            <strong>واتساب</strong>
+            <a href="https://wa.me/212600000000" target="_blank" rel="noopener">تواصلوا معنا عبر واتساب</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-glyph">📷</span>
+          <div>
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/nokhba.bakery" target="_blank" rel="noopener">nokhba.bakery@</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-glyph">📍</span>
+          <div>
+            <strong>العنوان</strong>
+            <span>شارع الحسن الثاني، الدار البيضاء، المغرب</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-glyph">🕐</span>
+          <div>
+            <strong>ساعات العمل</strong>
+            <span>يومياً من 06:30 صباحاً إلى 21:00 مساءً</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-panel">
+        <span class="glyph">🥐</span>
+        <h3>جاهزون لاستقبال طلبكم</h3>
+        <p>راسلونا الآن عبر واتساب وسنرد عليكم في أقرب وقت لتحضير طلبكم.</p>
+        <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="btn btn-primary">تواصل معنا عبر واتساب</a>
+        <div class="socials-row">
+          <a class="social-btn" href="https://instagram.com/nokhba.bakery" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a class="social-btn" href="tel:+212600000000" aria-label="اتصال">📞</a>
+          <a class="social-btn" href="https://wa.me/212600000000" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a href="#home" class="brand">
+        <span class="brand-mark">ن</span>
+        <span class="brand-text">
+          <strong style="color:#fff;">مخبزة وحلويات النخبة</strong>
+          <span style="color:var(--saffron-light);">طعم تقليدي بلمسة عصرية</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="#products">منتجاتنا</a>
+        <a href="#special-orders">الطلبات الخاصة</a>
+        <a href="#gallery">المعرض</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> مخبزة وحلويات النخبة. جميع الحقوق محفوظة.</span>
+      <span>صُنع بشغف كل يوم 🥐</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" aria-label="الرجوع للأعلى">↑</button>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  var burger = document.getElementById('burgerBtn');
+  var mobilePanel = document.getElementById('mobilePanel');
+  var backTop = document.getElementById('backTop');
+  var navLinks = document.querySelectorAll('.primary-nav a');
+  var sections = document.querySelectorAll('section[id]');
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('solid', y > 40);
+    backTop.classList.toggle('show', y > 500);
+
+    var current = '';
+    sections.forEach(function(sec){
+      var top = sec.offsetTop - 120;
+      if(y >= top){ current = sec.getAttribute('id'); }
+    });
+    navLinks.forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  function toggleMenu(open){
+    var isOpen = open !== undefined ? open : !mobilePanel.classList.contains('open');
+    mobilePanel.classList.toggle('open', isOpen);
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ toggleMenu(); });
+  mobilePanel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ toggleMenu(false); });
+  });
+
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
