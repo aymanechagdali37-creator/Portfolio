@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أيمن | مطور مواقع ويب</title>
+<meta name="description" content="بورتفوليو أيمن، مطور مواقع ويب">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   المتغيرات
+========================= */
+:root{
+  --bg:#f7f5ef;
+  --card:#ffffff;
+  --dark:#111827;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --gold:#c8943d;
+  --gold-dark:#a97427;
+  --line:#e5e0d5;
+  --dark-section:#111827;
+  --dark-card:#192233;
+
+  --title:'Cairo',sans-serif;
+  --body:'Tajawal',sans-serif;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1100px, calc(100% - 40px));
+  margin:auto;
+}
+
+/* =========================
+   Navigation
+========================= */
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(247,245,239,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.navbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:var(--title);
+  font-size:1.45rem;
+  font-weight:900;
+  color:var(--dark);
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  font-weight:500;
+  color:var(--muted);
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--gold-dark);
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  cursor:pointer;
+  color:var(--dark);
+}
+
+/* =========================
+   Hero
+========================= */
+.hero{
+  min-height:100vh;
+  padding:140px 0 90px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(200,148,61,.08);
+  top:-130px;
+  left:-150px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-small{
+  color:var(--gold-dark);
+  font-weight:700;
+  margin-bottom:12px;
+  animation:fadeUp .7s ease both;
+}
+
+.hero h1{
+  font-family:var(--title);
+  font-size:clamp(2.7rem,7vw,5rem);
+  line-height:1.2;
+  color:var(--dark);
+  margin-bottom:20px;
+  animation:fadeUp .7s .1s ease both;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero-text{
+  color:var(--muted);
+  font-size:1.08rem;
+  max-width:580px;
+  margin-bottom:30px;
+  animation:fadeUp .7s .2s ease both;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  animation:fadeUp .7s .3s ease both;
+}
+
+.btn{
+  padding:13px 25px;
+  border-radius:5px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.25s;
+}
+
+.btn-main{
+  background:var(--dark);
+  color:white;
+}
+
+.btn-main:hover{
+  transform:translateY(-3px);
+  background:#263246;
+}
+
+.btn-light{
+  border:1px solid var(--line);
+  background:white;
+}
+
+.btn-light:hover{
+  transform:translateY(-3px);
+  border-color:var(--gold);
+}
+
+.hero-image{
+  position:relative;
+  animation:fadeUp .8s .25s ease both;
+}
+
+.hero-image img{
+  height:430px;
+  object-fit:cover;
+  border-radius:8px;
+  filter:saturate(.8);
+}
+
+.hero-image::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:2px solid var(--gold);
+  top:18px;
+  right:-18px;
+  border-radius:8px;
+  z-index:-1;
+}
+
+/* =========================
+   Sections
+========================= */
+section{
+  padding:100px 0;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-heading span{
+  color:var(--gold-dark);
+  font-weight:700;
+}
+
+.section-heading h2{
+  font-family:var(--title);
+  font-size:2.4rem;
+  color:var(--dark);
+  margin:8px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+}
+
+/* =========================
+   About
+========================= */
+.about{
+  background:var(--dark-section);
+  color:white;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-box{
+  border:1px solid rgba(255,255,255,.15);
+  padding:50px 30px;
+  text-align:center;
+  position:relative;
+}
+
+.about-box .number{
+  font-family:var(--title);
+  font-size:5rem;
+  color:var(--gold);
+  font-weight:900;
+}
+
+.about-box p{
+  color:#cbd5e1;
+}
+
+.about h2{
+  font-family:var(--title);
+  font-size:2.3rem;
+  margin-bottom:20px;
+}
+
+.about-text{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.about-list{
+  display:grid;
+  gap:12px;
+}
+
+.about-list li{
+  color:#e5e7eb;
+}
+
+.about-list li::before{
+  content:"✓";
+  color:var(--gold);
+  font-weight:bold;
+  margin-left:10px;
+}
+
+/* =========================
+   Skills
+========================= */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.skill{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:30px 20px;
+  text-align:center;
+  transition:.3s;
+}
+
+.skill:hover{
+  transform:translateY(-7px);
+  border-color:var(--gold);
+}
+
+.skill-icon{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.skill h3{
+  font-family:var(--title);
+  margin-bottom:8px;
+}
+
+.skill p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* =========================
+   Projects
+========================= */
+.projects{
+  background:#eeeae1;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.project{
+  background:white;
+  border:1px solid var(--line);
+  overflow:hidden;
+  transition:.3s;
+}
+
+.project:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.project-image{
+  height:210px;
+  overflow:hidden;
+  position:relative;
+}
+
+.project-image img{
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.project:hover .project-image img{
+  transform:scale(1.05);
+}
+
+.project-content{
+  padding:25px;
+}
+
+.project-content h3{
+  font-family:var(--title);
+  font-size:1.3rem;
+  margin-bottom:8px;
+}
+
+.project-content p{
+  color:var(--muted);
+  font-size:.93rem;
+  margin-bottom:18px;
+}
+
+.project-label{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--gold-dark);
+  border:1px solid var(--line);
+  padding:4px 10px;
+  border-radius:20px;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta{
+  background:var(--dark);
+  text-align:center;
+  color:white;
+}
+
+.cta h2{
+  font-family:var(--title);
+  font-size:2.5rem;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#cbd5e1;
+  margin-bottom:28px;
+}
+
+.cta .btn{
+  background:var(--gold);
+  color:var(--dark);
+}
+
+.cta .btn:hover{
+  background:#e0b15c;
+  transform:translateY(-3px);
+}
+
+/* =========================
+   Contact
+========================= */
+.contact{
+  text-align:center;
+}
+
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.contact-link{
+  padding:13px 22px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:5px;
+  transition:.25s;
+}
+
+.contact-link:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px);
+}
+
+/* =========================
+   Footer
+========================= */
+.footer{
+  background:#0b0f18;
+  color:#9ca3af;
+  text-align:center;
+  padding:25px 0;
+  font-size:.9rem;
+}
+
+/* =========================
+   Animations
+========================= */
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media(max-width:850px){
+
+  .nav-links{
+    position:absolute;
+    top:72px;
+    right:0;
+    left:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+  }
+
+  .nav-links.open{
+    max-height:350px;
+  }
+
+  .nav-links a{
+    padding:15px 25px;
+    border-top:1px solid var(--line);
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-text{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-image{
+    max-width:450px;
+    margin:auto;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+    max-width:500px;
+    margin:auto;
+  }
+}
+
+@media(max-width:520px){
+
+  .container{
+    width:min(100% - 28px,1100px);
+  }
+
+  section{
+    padding:75px 0;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+
+  .hero-image img{
+    height:330px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading h2{
+    font-size:2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="header">
+
+  <div class="container navbar">
+
+    <a href="#home" class="logo">
+      أيمن<span>.</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من أنا</a>
+      <a href="#skills">مهاراتي</a>
+      <a href="#projects">مشاريعي</a>
+      <a href="#contact">تواصل معي</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="hero-small">
+        مطور مواقع ويب
+      </div>
+
+      <h1>
+        أنا <span>أيمن</span><br>
+        أصنع مواقع ويب عصرية
+      </h1>
+
+      <p class="hero-text">
+        أتعلم تطوير مواقع الويب وأعمل على تحويل الأفكار
+        إلى مواقع مرتبة، سريعة ومتجاوبة مع مختلف الأجهزة.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-main">
+          شاهد مشاريعي
+        </a>
+
+        <a href="#contact" class="btn btn-light">
+          تواصل معي
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+        alt="تطوير مواقع الويب">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+<section class="about" id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-box reveal">
+
+      <div class="number">
+        2026
+      </div>
+
+      <p>
+        بداية رحلتي في تطوير مواقع الويب
+      </p>
+
+    </div>
+
+
+    <div class="reveal">
+
+      <h2>
+        من أنا؟
+      </h2>
+
+      <p class="about-text">
+        أنا أيمن، أتعلم تطوير مواقع الويب خطوة بخطوة.
+        أحب بناء المواقع وتجربة أفكار جديدة وتحسين مهاراتي
+        في تصميم وتطوير صفحات الويب.
+      </p>
+
+      <ul class="about-list">
+
+        <li>
+          تصميم صفحات متجاوبة مع الهاتف والكمبيوتر
+        </li>
+
+        <li>
+          بناء واجهات باستخدام HTML و CSS
+        </li>
+
+        <li>
+          إضافة التفاعل باستخدام JavaScript
+        </li>
+
+        <li>
+          تطوير مشاريع تطبيقية لبناء الخبرة
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <span>ما أتعلمه</span>
+
+      <h2>
+        مهاراتي
+      </h2>
+
+      <p>
+        الأدوات والتقنيات التي أستخدمها في رحلتي البرمجية.
+      </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+      <div class="skill reveal">
+
+        <div class="skill-icon">
+          &lt;/&gt;
+        </div>
+
+        <h3>
+          HTML
+        </h3>
+
+        <p>
+          بناء هيكل صفحات الويب بطريقة منظمة.
+        </p>
+
+      </div>
+
+
+      <div class="skill reveal">
+
+        <div class="skill-icon">
+          🎨
+        </div>
+
+        <h3>
+          CSS
+        </h3>
+
+        <p>
+          تصميم وتنسيق الواجهات بشكل جذاب ومتجاوب.
+        </p>
+
+      </div>
+
+
+      <div class="skill reveal">
+
+        <div class="skill-icon">
+          JS
+        </div>
+
+        <h3>
+          JavaScript
+        </h3>
+
+        <p>
+          إضافة التفاعل والحركة والمنطق للمواقع.
+        </p>
+
+      </div>
+
+
+      <div class="skill reveal">
+
+        <div class="skill-icon">
+          📱
+        </div>
+
+        <h3>
+          Responsive
+        </h3>
+
+        <p>
+          جعل المواقع مناسبة لمختلف أحجام الشاشات.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+<section class="projects" id="projects">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <span>أعمال تجريبية</span>
+
+      <h2>
+        مشاريعي
+      </h2>
+
+      <p>
+        بعض النماذج التي أعمل عليها لتطبيق ما أتعلمه.
+      </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+      <!-- BARBER -->
+      <article class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80"
+            alt="موقع حلاق">
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Classic Barber
+          </h3>
+
+          <p>
+            موقع تجريبي لمحل حلاقة رجالية،
+            بتصميم كلاسيكي وأنيق لعرض الخدمات
+            والأثمنة وطرق التواصل والحجز.
+          </p>
+
+          <span class="project-label">
+            HTML · CSS · JavaScript
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- RESTAURANT -->
+      <article class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80"
+            alt="موقع مطعم">
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Pizza House
+          </h3>
+
+          <p>
+            موقع تجريبي لمطعم بيتزا،
+            يعرض قائمة الطعام والعروض
+            ومعلومات المطعم بطريقة جذابة.
+          </p>
+
+          <span class="project-label">
+            HTML · CSS · JavaScript
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- STORE -->
+      <article class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80"
+            alt="متجر إلكتروني">
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Aymane Store
+          </h3>
+
+          <p>
+            نموذج تجريبي لمتجر إلكتروني
+            لعرض المنتجات والأسعار
+            بطريقة بسيطة واحترافية.
+          </p>
+
+          <span class="project-label">
+            HTML · CSS · JavaScript
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="cta">
+
+  <div class="container reveal">
+
+    <h2>
+      بغيتي تشوف مشاريعي؟
+    </h2>
+
+    <p>
+      تواصل معي وسنشارك معك نماذج من المواقع التي أعمل عليها.
+    </p>
+
+    <a href="#contact" class="btn">
+      تواصل معي
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <span>لنتواصل</span>
+
+      <h2>
+        تواصل معي
+      </h2>
+
+      <p>
+        عندك فكرة مشروع؟ يسعدني نتواصل معك.
+      </p>
+
+    </div>
+
+
+    <div class="contact-links reveal">
+
+      <a
+        href="mailto:aymanechagdali37@gmail.com"
+        class="contact-link">
+        📧 البريد الإلكتروني
+      </a>
+
+      <a
+        href="https://instagram.com/ayman.codes"
+        target="_blank"
+        class="contact-link">
+        📱 Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="footer">
+
+  <div class="container">
+
+    <p>
+      © 2026 Aymane — جميع الحقوق محفوظة
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   القائمة في الهاتف
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function(){
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+/* إغلاق القائمة عند الضغط على رابط */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+  link.addEventListener("click", function(){
+
+    navLinks.classList.remove("open");
+
+  });
+
+});
+
+
+/* =========================
+   حركات الظهور عند التمرير
+========================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(function(entries){
+
+  entries.forEach(function(entry){
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("show");
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+},{
+  threshold:0.12
+});
+
+
+revealElements.forEach(function(element){
+
+  observer.observe(element);
+
+});
+
+
+/* =========================
+   تأثير بسيط على الهيدر
+========================= */
+
+window.addEventListener("scroll", function(){
+
+  const header = document.querySelector(".header");
+
+  if(window.scrollY > 30){
+
+    header.style.boxShadow = "0 5px 25px rgba(0,0,0,.06)";
+
+  }else{
+
+    header.style.boxShadow = "none";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
